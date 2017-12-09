@@ -1,1 +1,2 @@
 # Snort-IDS-IPS
+Snort generally is a most commonly used Intrusion detection and prevention system. In this report, we discuss all the minute elements that are required from installing snort to configuring it as a full-fledged Intrusion detection and prevention system. We also give an overview of functioning of Snort by performing several attacks such as cross-site scripting and SQL injection attack. By whole we present a complete step by step process of deploying a complete package of Snort along with configuration of both the attacker and the victim. 
