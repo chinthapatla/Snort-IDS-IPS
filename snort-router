@@ -1,0 +1,61 @@
+#For the snort-router machine we consider a Ubuntu Virtual Machine
+
+# Installing packages
+sudo apt install -y gcc libpcre3-dev zlib1g-dev libpcap-dev openssl libssl-dev libnghttp2-dev libdumbnet-dev bison flex libdnet
+
+# Making and creating directories
+
+mkdir ~/snort_src && cd ~/snort_src
+
+# Downloading snort DAQ(Data acquistion libraries)
+
+wget https://www.snort.org/downloads/snort/daq-2.0.6.tar.gz
+
+#Downloading snort from source website
+
+wget https://snort.org/downloads/snort/snort-2.9.11.tar.gz
+
+# extracting and changing directory
+
+tar -xvzf daq-2.0.6.tar.gz
+cd daq-2.0.6
+
+#Run the script and compiling it
+
+./configure && make && sudo make install
+
+#extracting snort source file and changing directory
+
+tar -xvzf snort-2.9.11.tar.gz
+cd snort-2.9.11
+
+#Checking Snort version
+
+snort -V
+
+# To run Snort as NIDS we need to make changes
+
+sudo gedit/etc/snort/snort.conf
+
+# Then we create a home network and rules
+
+# After configuring snort we need to test it, we do it as follows
+
+sudo snort -T -c/eth0/snort/snort.conf -i eth0
+
+# We see that Snort has been configured properly
+
+#Then we install barnyard2
+
+For this we install MySQL first and download barnyard2
+
+Then we create MySQL database; Then we create a schema in barnyard2
+
+# Next we install BASE
+
+We download and install BASE and give the access to the database
+
+# Then we can visualize the logs
+
+#The snort-router setup is now complete
+
