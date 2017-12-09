@@ -1,0 +1,13 @@
+# For the victim machine we install another Ubuntu machine
+
+# Installing tomcat
+
+For this we install the pre-requisites such as jdk and jre and set the EXPORT PATH; Then we install tomcat
+
+#Installing Bodgeit store
+
+wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/bodgeit/bodgeit.1.4.0.zip
+
+# Then we extract and install
+
+Now we see Bodgeit store running
