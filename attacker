@@ -1,0 +1,5 @@
+# For the attacker machine we use a Kali Linux Virtual Machine
+
+In this we just attack the victim machine using Bodgeit store.
+
+We access the Bodgeit store page using the IP address of the victim machine from the attacker.
