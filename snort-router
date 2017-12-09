@@ -39,6 +39,7 @@ sudo gedit/etc/snort/snort.conf
 
 # Then we create a home network and rules
 
+
 # After configuring snort we need to test it, we do it as follows
 
 sudo snort -T -c/eth0/snort/snort.conf -i eth0
@@ -59,3 +60,27 @@ We download and install BASE and give the access to the database
 
 #The snort-router setup is now complete
 
+
+# Now we run as a NIDS mode as 
+
+sudo /usr/local/bin/snort -A console -i eth0 -u snort -g snort -c /etc/snort/snort.conf 
+
+# Then we run barnyard2 parallely in another terminal and see that it is waiting for new data
+
+# We can see the analysis using BASE
+
+#Attacking
+
+Now  we attack from the victim machine and see that the snort-router pops alerts
+
+# Snort as NIPS
+
+sudo /usr/local/bin/snort -A console -Q -c /etc/snort/snort.conf -i eth0:eth1
+
+#Now we run barnyard2 parallely in another terminal
+
+sudo barnyard2 -c /etc/snort/barnyard2.conf -d /var/log/snort -f snort.u2 -w /var/log/snort/barnyard2.waldo -g snort -u snort
+
+#Now we attack 
+
+We see that the snort-router drops the packets and resets the connection.
